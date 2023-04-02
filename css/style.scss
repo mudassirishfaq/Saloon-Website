@@ -1,0 +1,136 @@
+/*Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;700;800&family=Roboto+Slab:wght@100;300;400;500;600;800&display=swap');
+
+/*Universal*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins;
+    transition: all .3s;
+    list-style: none;
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+}
+
+/*
+Variables
+*/
+$main__color: #edd4c6;
+$text__color: #121212;
+$container__color: #fdf5f0;
+$bg__color: #fff;
+$text__alter-color: #27282b;
+$font__family-1: "Raleway", sans-serif;
+$font__family-2: "Roboto Slab", serif;
+
+body {
+    color: $text__color;
+}
+
+img {
+    width: 100%;
+}
+
+section {
+    padding: 3rem 0 2rem;
+}
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    width: 100%;
+}
+
+/*
+Header Styling
+*/
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    width: 100%;
+
+    .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .logo {
+            font-size: 1.3rem;
+            color: $text__color;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .navbar {
+            display: flex;
+            column-gap: 1.5rem;
+            padding: 20px 0;
+
+            .nav__link {
+                text-decoration: none;
+                color: $text__color;
+                position: relative;
+                font-weight: 400;
+                transition: all .3s linear;
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    background: $text__color;
+                    width: 0%;
+                    height: 2px;
+                    top: 25px;
+                    left: 0;
+                    right: 0;
+                    opacity: 0;
+                    margin: auto;
+                    text-align: center;
+                    transition: all .3s linear;
+                }
+
+                &:hover::after {
+                    width: 80%;
+                    opacity: 1;
+                }
+
+            }
+
+        }
+
+        .menu__icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            row-gap: 5px;
+            z-index: 200;
+            transition: .3s;
+            cursor: pointer;
+
+            div {
+                display: block;
+                background: $text__color;
+                width: 25px;
+                height: 2px;
+                transition: .3s;
+            }
+
+        }
+        
+        .move .line__1 {
+            transform: rotate(-45deg) translate(-5px, 5px);
+        }
+
+        .move .line__2 {
+            opacity: 0;
+        }
+
+        .move .line__3 {
+            transform: rotate(45deg) translate(-5px, -5px);
+        }
+    }
+}
