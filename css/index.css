@@ -255,8 +255,113 @@ header .register__btn:hover {
   letter-spacing: 1px;
   font-family: Poppins;
 }
+.about .heading::after {
+  position: absolute;
+  content: "";
+  right: -12px;
+  width: 40px;
+  height: 40px;
+  z-index: -1;
+  bottom: 0;
+  background: #faf0e4;
+  -webkit-clip-path: polygon(50% 0, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+          clip-path: polygon(50% 0, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+}
 .about h1 {
   font-size: 1.7rem;
   margin: 1rem 0;
   letter-spacing: 1px;
+}
+.about p {
+  max-width: 600px;
+  margin-bottom: 1.5rem !important;
+  font-size: 1.075rem;
+  color: #27282b;
+  margin: auto;
+}
+.about .learn__more {
+  display: inline-flex;
+  align-items: flex-end;
+  color: #121212;
+  text-decoration: none;
+  background: #121212;
+  color: #fff;
+  padding: 12px 24px;
+  margin-bottom: 2rem;
+}
+.about .learn__more .bx {
+  font-size: 1.2rem;
+  margin-left: 0.4rem;
+  transition: all 0.4s;
+}
+.about .learn__more:hover .bx {
+  margin-left: 0.5rem;
+  transform: 0.3s;
+  transform: rotate(-40deg);
+}
+.about .learn__more:hover {
+  background: #fff;
+  color: #121212;
+  border: 1px solid #121212;
+  border-radius: 0.2rem;
+  font-weight: 600;
+}
+
+.about__data {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, auto));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.about__data .about__box {
+  position: relative;
+  width: 100%;
+  height: 280px;
+}
+.about__data .about__box::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  border: 1px solid #edd4c6;
+  background: transparent;
+  z-index: -1;
+}
+.about__data .about__box img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.about__data .about__box .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: hsla(33, 69%, 94%, 0.7);
+  padding: 15px;
+  -webkit-clip-path: circle(0px at 50% 50%);
+          clip-path: circle(0px at 50% 50%);
+  transition: all 0.5s ease-in-out;
+}
+.about__data .about__box .overlay h2 {
+  font-size: 1.3rem;
+  color: #121212;
+  margin-top: 0.5rem;
+  font-family: "Raleway", sans-serif;
+}
+.about__data .about__box .overlay p {
+  font-size: 0.9875rem;
+}
+.about__data .about__box:hover .overlay {
+  -webkit-clip-path: circle(70% at 50% 50%);
+          clip-path: circle(70% at 50% 50%);
+  transition: all 0.5s ease-in-out;
 }/*# sourceMappingURL=index.css.map */
