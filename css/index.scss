@@ -50,6 +50,26 @@ section {
     padding: 3rem 0 2rem;
 }
 
+.heading {
+    position: relative;
+    display: inline-flex;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-family: Poppins;
+
+    &::after {
+        position: absolute;
+        content: '';
+        right: -12px;
+        width: 40px;
+        height: 40px;
+        z-index: -1;
+        bottom: 0;
+        background: #faf0e4;
+        clip-path: polygon(50% 0, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+    }
+}
 
 /*
 Header Styling
@@ -292,26 +312,7 @@ header {
         margin-top: 4rem !important;
     }
 
-    .heading {
-        position: relative;
-        display: inline-flex;
-        font-size: 1.5rem;
-        font-weight: 500;
-        letter-spacing: 1px;
-        font-family: Poppins;
 
-        &::after {
-            position: absolute;
-            content: '';
-            right: -12px;
-            width: 40px;
-            height: 40px;
-            z-index: -1;
-            bottom: 0;
-            background: #faf0e4;
-            clip-path: polygon(50% 0, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
-        }
-    }
 
     h1 {
         font-size: 1.7rem;
@@ -429,18 +430,21 @@ header {
 
 .services {
     background: $container__color;
+
     .heading {
         margin-bottom: 1rem;
         display: inline-flex;
         font-weight: 400;
         border-bottom: 2px solid $text__color;
     }
-    .service__img{
+
+    .service__img {
         position: relative;
         width: 300px;
         height: 450px;
         margin-top: 1.5rem;
-        &::after{
+
+        &::after {
             position: absolute;
             content: '';
             width: 100%;
@@ -453,65 +457,75 @@ header {
             z-index: -1;
 
         }
-        img{
+
+        img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position:center center ;
+            object-position: center center;
         }
     }
-    .service__box{
+
+    .service__box {
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
-        place-items:center ;
+        place-items: center;
     }
-    .service__data{
-        .service__title{
+
+    .service__data {
+        .service__title {
             font-size: 1.7rem;
             margin-bottom: 1rem;
             text-transform: uppercase;
             font-weight: 500;
-       
-           
+
+
         }
-        .service__description{
+
+        .service__description {
             font-size: 1.075rem;
             letter-spacing: 1px;
             margin: 1.5rem 0;
         }
     }
-    .service__package{
+
+    .service__package {
         display: grid;
         row-gap: 1rem;
         margin: 2rem 0 1rem;
-        .service__package__box{
+
+        .service__package__box {
             display: flex;
             align-items: center;
             column-gap: .5rem;
-            .bx{
-                color: $text__alter-color!important;
+
+            .bx {
+                color: $text__alter-color !important;
                 background: $bg__color;
                 padding: 1rem;
                 border-radius: 30px;
                 margin-right: 1rem;
             }
-            span{
+
+            span {
                 font-size: 1.075rem;
                 border-bottom: 3px solid $text__alter-color;
                 padding-bottom: .6rem;
                 border-radius: 10px;
             }
         }
-        hr{
+
+        hr {
             background: $text__alter-color;
             width: 75%;
-            margin:  3rem auto 0;
-            text-align: center!important;
+            margin: 3rem auto 0;
+            text-align: center !important;
             height: 3px;
         }
-        .book__now{
-            max-width:100px;
+
+        .book__now {
+            max-width: 100px;
             margin: auto;
             display: inline-block;
             text-decoration: none;
@@ -522,35 +536,94 @@ header {
             border-radius: .3rem;
             margin-top: 1rem;
             transition: all .3s ease-in-out;
-            &:hover{
+
+            &:hover {
                 background: #d1a670;
                 color: $bg__color;
                 transition: all .3s ease-in-out;
             }
         }
     }
-    .slider__btns{
+
+    .slider__btns {
         display: flex;
         justify-content: center;
         width: 100%;
         max-width: 1100px;
         column-gap: 1rem;
         margin: 1.5rem auto 1.5rem auto;
+
         .swiper-button-next,
-        .swiper-button-prev{
-            position: static!important;
-            transform: translate(0,0);
+        .swiper-button-prev {
+            position: static !important;
+            transform: translate(0, 0);
             margin-block: 10px;
             background: $text__color;
             width: 100px;
             height: 45px;
             border-radius: 5px;
             column-gap: 1rem;
-            &::after{
+
+            &::after {
                 font-size: 20px !important;
                 color: $bg__color !important;
                 font-weight: 800;
             }
         }
     }
+}
+
+/*Testimonials*/
+
+.testimonaials {
+    .heading {
+        margin-bottom: 1rem;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem !important;
+        line-height: 1.3;
+    }
+    .testimonial__data 
+    {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 1.5rem;
+        margin-top: 1rem;
+        &__box{
+            &__img{
+                width: 100%;
+                height: 280px;
+                position: relative;
+                margin-bottom: .5rem;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center center;
+                }
+            }
+            .bx{
+                position: absolute;
+                right: .5rem;
+                bottom: -1.2rem;
+                background: #d1a670;
+                padding: 15px;
+                color: $bg__color;
+                border-radius: 3px;
+            }
+            h2{
+                font-size: 1.5rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+                margin-bottom: .5rem;
+            }
+            p{
+                font-size: 1.05rem;
+            }
+        }
+    }
+
 }
