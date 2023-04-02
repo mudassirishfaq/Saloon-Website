@@ -1,0 +1,308 @@
+/*Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;700;800&family=Roboto+Slab:wght@100;300;400;500;600;800&display=swap');
+
+
+/*Universal*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins;
+    transition: all .3s;
+    list-style: none;
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+}
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    width: 100%;
+}
+
+.btn {
+    padding: 10px 24px;
+    border-radius: 0.24rem;
+    font-family: Poppins;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+/*
+Variables
+*/
+$main__color: #edd4c6;
+$text__color: #121212;
+$container__color: #fdf5f0;
+$bg__color: #fff;
+$text__alter-color: #27282b;
+$font__family-1: "Raleway", sans-serif;
+$font__family-2: "Roboto Slab", serif;
+
+body {
+    color: $text__color;
+}
+
+img {
+    width: 100%;
+}
+
+section {
+    padding: 3rem 0 2rem;
+}
+
+
+/*
+Header Styling
+*/
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+
+    .nav {
+        display: flex;
+        align-items: center !important;
+        justify-content: space-between;
+
+        .logo {
+            font-size: 1.3rem;
+            color: $text__color;
+            letter-spacing: 1px;
+            text-decoration: none;
+            margin-bottom: 1rem;
+        }
+
+        .navbar {
+            display: flex;
+            column-gap: 1.5rem;
+            padding: 20px 0;
+
+            .nav__link {
+                text-decoration: none;
+                color: $text__color;
+                position: relative;
+                font-weight: 400;
+                transition: all .3s linear;
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    background: $text__color;
+                    width: 0%;
+                    height: 2px;
+                    top: 25px;
+                    left: 0;
+                    right: 0;
+                    opacity: 0;
+                    margin: auto;
+                    text-align: center;
+                    transition: all .3s linear;
+                }
+
+                &:hover::after {
+                    width: 80%;
+                    opacity: 1;
+                }
+
+            }
+
+        }
+
+        .menu__icon {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            row-gap: 5px;
+            z-index: 200;
+            transition: .3s;
+            cursor: pointer;
+
+            div {
+                display: block;
+                background: $text__color;
+                width: 25px;
+                height: 2px;
+                transition: .3s;
+            }
+
+        }
+
+        .move .line__1 {
+            transform: rotate(-45deg) translate(-5px, 5px);
+        }
+
+        .move .line__2 {
+            opacity: 0;
+        }
+
+        .move .line__3 {
+            transform: rotate(45deg) translate(-5px, -5px);
+        }
+    }
+
+    .register__btn {
+        color: $text__color;
+        padding: 10px 24px;
+        border: 1px solid $text__color;
+        font-weight: 500;
+        margin-left: 2rem;
+        font-size: 0.875rem;
+        text-decoration: none;
+
+        &:hover {
+            background: $text__color;
+            color: $bg__color;
+        }
+    }
+}
+
+
+/*Home styling*/
+
+.home {
+    min-height: 640px;
+    background: $container__color;
+
+    .home__data {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        padding-top: 2rem;
+
+        .home__text {
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+
+            h3 {
+                font-size: 1.1rem;
+                font-weight: 500;
+                letter-spacing: 1px;
+                font-family: Poppins;
+            }
+
+            h2 {
+                font-size: 2.8rem;
+                font-weight: 600;
+                letter-spacing: 2px;
+                font-family: $font__family-2;
+                line-height: 1.1;
+            }
+        }
+
+        .home__image {
+            display: none;
+        }
+
+        .home__buttons {
+            display: flex;
+            align-items: center;
+            column-gap: 1.5rem;
+            margin-top: 1.5rem;
+
+            .book__btn {
+                border: 1px solid $text__color;
+                border-radius: .2rem;
+                color: $bg__color;
+                text-decoration: none;
+                background: $text__color;
+
+                &:hover {
+                    background: $bg__color;
+                    color: $text__color;
+                }
+            }
+
+            .explore__btn {
+                text-decoration: none;
+                color: $text__color;
+                border: 1px solid $text__color;
+
+                &:hover {
+                    background: $text__color;
+                    color: $bg__color;
+                }
+            }
+        }
+
+        .home__bg {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            bottom: -140px;
+            z-index: 2;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-fit: center;
+            }
+
+            &::after {
+                content: '';
+                top: -2rem;
+                left: -2rem;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                border: 1px solid $main__color;
+                z-index: -1;
+            }
+        }
+
+        .contact__info {
+            display: inline-block;
+            margin-top: 2rem;
+
+            .contact__info__box {
+                display: inline-flex;
+                column-gap: .5rem;
+                margin-right: 1rem;
+                margin-bottom: 1rem;
+                align-items: center;
+
+                .bx {
+                    font-size: 1.3rem;
+                }
+
+                span {
+                    font-size: .8rem;
+                }
+            }
+        }
+    }
+}
+
+/*About */
+
+/*About Text*/
+.about {
+    .about__text {
+        text-align: center;
+        margin-top: 4rem !important;
+    }
+    .heading{
+        position: relative;
+        display: inline-flex;
+        font-size:1.5rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+        font-family: Poppins;
+    }
+    h1{
+        font-size: 1.7rem;
+        margin: 1rem 0;
+        letter-spacing: 1px;
+    }
+    
+}
