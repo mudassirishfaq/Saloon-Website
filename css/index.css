@@ -76,6 +76,10 @@ header {
   justify-content: space-between;
   padding-top: 1.5rem;
 }
+header.active {
+  background: #d1a670;
+  color: #fff;
+}
 header .nav {
   display: flex;
   align-items: center !important;
@@ -544,4 +548,66 @@ header .register__btn:hover {
 }
 .testimonaials .testimonial__data__box p {
   font-size: 1.05rem;
+}
+
+/*Footer*/
+.footer {
+  background: #27282b;
+  color: #f6f6f6;
+}
+.footer a {
+  color: #f6f6f6;
+  text-decoration: none;
+}
+.footer__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.footer__container .footer__box {
+  display: flex;
+  flex-direction: column;
+}
+.footer__container .footer__box .logo {
+  margin-bottom: 1rem;
+}
+.footer__container .footer__box__social__icons {
+  display: flex;
+  align-items: center;
+}
+.footer__container .footer__box__social__icons a {
+  font-size: 24px;
+  margin-right: 1rem;
+}
+.footer__container .footer__box__social__icons a:hover {
+  color: #d1a670;
+}
+.footer__container .footer__box h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+.footer__container .footer__box a {
+  color: #818181;
+  padding-block: 0.5rem;
+}
+.footer__container .footer__box a:hover {
+  color: #d1a670;
+}
+
+.copyright {
+  text-align: center;
+  background: #d1a670;
+  padding: 15px;
+  color: #121212;
+  margin-bottom: 0;
+}
+.copyright p {
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+.copyright p span {
+  border: 1px solid #27282b;
+  padding-inline: 10px;
+  background: #fff;
 }/*# sourceMappingURL=index.css.map */
